@@ -1,16 +1,25 @@
-const RestaurantCard = () => {
-  return (
-    <div className="res-card w-[250px] h-[300px] hover:border hover:border-black p-3 bg-gray-200 m-2">
-      <img
-        className="w-[100%]"
-        alt="image"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/q3oyvdxdoexcrmmffyet"
-      />
-      <h2>Meghna Kitchens</h2>
-      <h4>Biryani, North India, Asia</h4>
+import { CON_URL } from "../utils/constants";
 
-      <h4>4.3 Stars</h4>
-      <h4>34 minutes</h4>
+const RestaurantCard = (props) => {
+  const { resData } = props;
+
+  const {
+    name,
+    cuisines,
+    cloudinaryImageId,
+    avgRating,
+    costForTwo,
+    deliveryTime,
+  } = resData?.info;
+  return (
+    <div className="res-card w-[350px] hover:border hover:border-black p-3 bg-gray-200 m-2">
+      <img className="w-[100%]" alt="image" src={CON_URL + cloudinaryImageId} />
+      <h2 className="text-lg font-bold mt-2">{name}</h2>
+      <h4>{cuisines.join(" , ")}</h4>
+
+      <h4 className="mt-3">{avgRating} Stars</h4>
+      <h4>{costForTwo}</h4>
+      <h4>{deliveryTime} minutes</h4>
     </div>
   );
 };
