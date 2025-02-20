@@ -7,8 +7,8 @@ const Header = () => {
         <img className="logo w-[150px] h-[100px] ml-32" src={LOGO_URL} />
       </div>
 
-      <div className="nav-items px-20 py-5 font-semibold">
-        <ul className="flex text-[20px]">
+      <div className="nav-items px-20 py-5 font-bold">
+        <ul className="flex text-[21px]">
           <li className="p-[10px] m-[10px]">Home</li>
           <li className="p-[10px] m-[10px]">About</li>
           <li className="p-[10px] m-[10px]">Contact</li>
