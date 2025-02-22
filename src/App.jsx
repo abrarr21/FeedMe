@@ -1,12 +1,12 @@
-import Body from "./components/Body";
 import Header from "./components/Header";
+import Routing from "./utils/Routing";
 
 function App() {
   return (
     <>
       <div className="app">
         <Header />
-        <Body />
+        <Routing />
       </div>
     </>
   );
