@@ -2,6 +2,7 @@ import { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -28,6 +29,11 @@ const Body = () => {
         ?.restaurants,
     );
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return <h1>You are offline!! Connect to Internet</h1>;
 
   if (listOfRestaurant.length === 0) {
     return (
