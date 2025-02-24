@@ -12,8 +12,12 @@ const RestaurantCard = (props) => {
     deliveryTime,
   } = resData?.info;
   return (
-    <div className="res-card w-[350px] hover:border hover:border-black hover:rounded hover:cursor-pointer p-3 bg-gray-200 m-2">
-      <img className="w-[100%]" alt="image" src={CON_URL + cloudinaryImageId} />
+    <div className="res-card w-[350px] hover:border hover:border-black rounded-md hover:cursor-pointer hover:bg-gray-300 p-3 bg-gray-200 m-2">
+      <img
+        className="w-[100%] rounded-lg"
+        alt="image"
+        src={CON_URL + cloudinaryImageId}
+      />
       <h2 className="text-lg font-bold mt-2">{name}</h2>
       <h4>{cuisines.join(" , ")}</h4>
 
