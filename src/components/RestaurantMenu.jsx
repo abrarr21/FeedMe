@@ -7,6 +7,8 @@ const RestuarantMenu = () => {
   const { resId } = useParams();
   const [restroMenu, setRestroMenu] = useState(null);
 
+  const [showIndex, setShowIndex] = useState(null);
+
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -61,10 +63,12 @@ const RestuarantMenu = () => {
       <h1 className="text-5xl font-bold mt-5">{name}</h1>
       <p className="mt-1 font-bold">{cuisines.join(", ")}</p>
       <h2 className="mt-4 text-3xl font-semibold">- MENU -</h2>
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <RestaurantCategory
           key={category?.card?.card?.title}
           data={category?.card?.card}
+          showItems={index == showIndex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
         />
       ))}
     </div>

@@ -2,10 +2,10 @@ import React from "react";
 import ItemList from "./ItemList";
 import { useState } from "react";
 
-const RestaurantCategory = ({ data }) => {
-  const [showItem, setShowItem] = useState(false);
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
+  //const [showItem, setShowItem] = useState(false);
   const handleClick = () => {
-    setShowItem(!showItem);
+    setShowIndex();
   };
   return (
     <div>
@@ -19,7 +19,7 @@ const RestaurantCategory = ({ data }) => {
           </span>
           <span>↓</span>
         </div>
-        {showItem && <ItemList items={data.itemCards} />}
+        {showItems && <ItemList items={data.itemCards} />}
       </div>
     </div>
   );
