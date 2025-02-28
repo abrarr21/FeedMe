@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
+
+  //subscribing to the store using a selector(cartItems)
+  const cartItems = useSelector((store) => store.cart.items);
   return (
-    <div className="header flex justify-between border border-black m-2">
+    <div className="header flex justify-between border-b-2 border-t-2 shadow-lg m-2">
       <div className="logo-container">
         <img className="logo w-[150px] h-[100px] ml-32" src={LOGO_URL} />
       </div>
@@ -24,8 +28,10 @@ const Header = () => {
           <li className="p-[10px] m-[10px]">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="p-[10px] m-[10px]">Cart</li>
-          <button className="px-2 bg-blue-500 text-white font-semibold text-sm rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          <li className="p-[10px] m-[10px]">
+            <Link to="/cart">Cart({cartItems.length})</Link>
+          </li>
+          <button className="px-2 font-bold text-blue-600 cursor-pointer">
             Login
           </button>
         </ul>
