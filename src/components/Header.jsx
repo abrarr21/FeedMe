@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="header flex justify-between border-b-2 border-t-2 shadow-lg m-2">
       <div className="logo-container">
-        <img className="logo w-[150px] h-[100px] ml-32" src={LOGO_URL} />
+        <img className="logo w-[200px] h-[100px] ml-32 mt-5 " src={LOGO_URL} />
       </div>
 
       <div className="nav-items px-20 py-5 font-bold">
