@@ -29,7 +29,9 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li className="p-[10px] m-[10px]">
-            <Link to="/cart">Cart({cartItems.length})</Link>
+            <Link to="/cart">
+              <i class="ri-shopping-cart-2-fill"></i> ({cartItems.length})
+            </Link>
           </li>
           <button className="px-2 font-bold text-blue-600 cursor-pointer">
             Login
