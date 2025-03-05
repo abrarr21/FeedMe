@@ -18,7 +18,7 @@ const Body = () => {
     const data = await fetch(BODY_URL);
 
     const json = await data.json();
-    //console.log(json);
+    // console.log(json);
     setListOfRestaurant(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
@@ -59,7 +59,7 @@ const Body = () => {
           {searchText.length !== 0 && (
             <i
               onClick={handleClearBtn}
-              class="ri-close-line mr-1 text-xl cursor-pointer"
+              className="ri-close-line mr-1 text-xl cursor-pointer"
             ></i>
           )}
           <button
