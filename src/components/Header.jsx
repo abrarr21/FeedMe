@@ -9,7 +9,7 @@ const Header = () => {
   //subscribing to the store using a selector(cartItems)
   const cartItems = useSelector((store) => store.cart.items);
   return (
-    <div className="header flex justify-between border-b-2 border-t-2 shadow-lg m-2">
+    <div className="header flex justify-between border-b-2 border-t-2 shadow-xl m-2 rounded-lg">
       <div className="logo-container">
         <img className="logo w-[200px] h-[100px] ml-32 mt-5 " src={LOGO_URL} />
       </div>
